@@ -5,3 +5,5 @@ O objetivo do projeto é mostrar as propostas dos atuais candidatos a prefeitura
 Reunir as informações em apenas um lugar pode ser muito útil para todos os usuários, fica mais fácil para comparar, ver as propostas, o partido, o número em que vai votar e etc.
 
 Os candidatos poderão ser buscados por nome, partido ou número de votação.
+
+Projeto com Deploy: https://eleicoessp.vercel.app/
