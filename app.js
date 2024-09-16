@@ -49,3 +49,31 @@ function pesquisar() {
   }
 }
 
+function getValue (nome) {
+  
+  let section = document.getElementById('resultados-pesquisa');
+  for(let dado of dados) {
+    if (dado.nome === nome) {
+      section.innerHTML = `
+          <div class="item-resultado">
+            <div class="titulo-candidato">
+              <h2><a href="${dado.link_wikipedia}" target="_blank" class ="link-wiki">
+              ${dado.nome} - (${dado.partido})</a></h2>
+            </div>
+            <div class="conteudo-flex">
+              <div class="foto-candidato">
+                <img src="${dado.foto}" alt="Foto de ${dado.nome}" class="foto-candidato">
+              </div>
+              <div detalhes-candidato>
+                <h3 class="bio">Mini bio</h3>
+                <p class="descricao-meta">${dado.descricao}</p>
+                <a href="${dado.propostaPDF}" target="_blank" class = "link-proposta ">Proposta em PDF</a>
+                <span> | </span>
+                <a href="${dado.propostaResumo}" target="_blank" class = "link-proposta ">Proposta resumida</a>
+              </div>
+            </div>
+          </div>` //bloco maior;  
+    }
+  }
+}
+

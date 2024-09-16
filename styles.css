@@ -11,9 +11,12 @@ body {
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
     justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o padding padrão */
+
+
+    background-image: url('Images/Eleicoes-2024v2.png');
+    background-size: cover;
+    background-position: center top; /* Centraliza horizontalmente e coloca no topo */
+    backdrop-filter: blur(5px); /* Adiciona um efeito de desfoque ao fundo */ 
 }
 
 /* Estiliza os títulos h1 */
@@ -149,20 +152,10 @@ footer {
     text-align: center; /* Alinha o texto ao centro */
     padding: 0; /* Espaçamento interno */
     width: 100%; /* Largura total da página */
-    position: absolute; /* Posiciona o rodapé */
+    position: relative; /* Posiciona o rodapé */
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 1rem; /* Tamanho da fonte */
 }
-
-.background-image {
-    background-image: url('Images/Eleicoes-2024v2.png');
-    background-size: cover;
-    background-position: center top; /* Centraliza horizontalmente e coloca no topo */
-    background-attachment: fixed; /* Fixa a imagem ao rolar */
-    width: 100%;
-    height: 100%;
-
-  }
 
 .botoes {
     display: flex;
@@ -176,6 +169,7 @@ footer {
     display: flex;
     justify-content: flex-start;
     width: 100%; /* Tamanho igual ao da div pai */
+    background-color: #FFFFFF;
 }
 
 .lista-candidatos {
