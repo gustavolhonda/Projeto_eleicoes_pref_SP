@@ -7,20 +7,39 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="background-image">
   <header>
     <h1>Eleição para prefeito de São Paulo - 2024</h1>
   </header>
 
   <main>
-    <section>
-      <input type="text" placeholder="Digite o nome do candidato" id="campo-pesquisa">
-      <button onclick="pesquisar()">Buscar</button>
-    </section>
+    <div>
+      <section>
+        <div class="botoes">
+          <input type="text" placeholder="Digite o nome ou partido do candidato " id="campo-pesquisa">
+          <button onclick="pesquisar()">Buscar</button>
+          <br>
+          <div class="itens">
+            <div clas="lista-candidatos">
+              <ul>
+                <li>Busca rápida</li>
+                  <ul>
+                    <li><a href=""></a>Guilherme Boulos</li>
+                    <li><a href=""></a>Pablo Marçal</li>
+                  </ul>
+              </ul>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </section>
+      
+      <section class="resultados-pesquisa" id="resultados-pesquisa">
+      </section>
+    </div>
 
-    <section class="resultados-pesquisa" id="resultados-pesquisa">
-    </section>
-    
   </main>
 
   <footer>

@@ -4,7 +4,10 @@ function pesquisar() {
   let campoPesquisa = document.getElementById('campo-pesquisa').value;
 
   if (campoPesquisa.trim() === "") {
-    section.innerHTML = "Nada foi encontrado. Você deve digitar o nome ou partido do candidato.";
+    section.innerHTML = `
+    <div class="item-resultado">
+      <p>Nada foi encontrado. Você deve digitar o nome ou partido do candidato.</p>
+    </div>`;	
     return;
   }
 
@@ -14,25 +17,35 @@ function pesquisar() {
 
   for(let dado of dados) {
     let nome = dado.nome.toLowerCase();
-    let descricao = dado.descricao.toLowerCase();
     let partido = dado.partido.toLowerCase();
     let tags = dado.tags.toLowerCase();
 
     if (nome.includes(campoPesquisa) ||  partido.includes(campoPesquisa) || tags.includes(campoPesquisa)) {
       resultados += `
           <div class="item-resultado">
-            <h2><a href="${dado.link_wikipedia}">${dado.nome} - (${dado.partido})</a></h2>
-            <h3>Mini bio</h3>
-            <p class="descricao-meta">${dado.descricao}</p>
-            <a href="${dado.proposta}" target="_blank" class = "link_proposta ">Propostas</a>
-          </div>`;  
+            <div class="titulo-candidato">
+              <h2><a href="${dado.link_wikipedia}" target="_blank" class ="link-wiki">
+              ${dado.nome} - (${dado.partido})</a></h2>
+            </div>
+            <div class="conteudo-flex">
+              <div class="foto-candidato">
+                <img src="${dado.foto}" alt="Foto de ${dado.nome}" class="foto-candidato">
+              </div>
+              <div detalhes-candidato>
+                <h3 class="bio">Mini bio</h3>
+                <p class="descricao-meta">${dado.descricao}</p>
+                <a href="${dado.propostaPDF}" target="_blank" class = "link-proposta ">Proposta em PDF</a>
+                <span> | </span>
+                <a href="${dado.propostaResumo}" target="_blank" class = "link-proposta ">Proposta resumida</a>
+              </div>
+            </div>
+          </div>` //bloco maior;  
     } 
 
-    if (!resultados) {
-      resultados = "Nada foi encontrado. Tente novamente.";
-    }
-
   section.innerHTML = resultados;
-}
+  }
+  if (!resultados) {
+    section.innerHTML = `<div class="item-resultado"><p>Nada foi encontrado. Tente novamente.</p></div>`;
+  }
 }
 
